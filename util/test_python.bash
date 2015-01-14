@@ -42,8 +42,11 @@ cp $CHPL_HOME/lib/linux64*/* $VIRTUAL_ENV/share/pych/lib/
 log_info "Moving to: ${REPO_ROOT}"
 cd $REPO_ROOT
 
+num_procs=`python -c "import multiprocessing; print(multiprocessing.cpu_count())"`
+log_info "Number of CPUs to use for parallel testing = $num_procs"
+
 log_info "Running py.test over $TST_DIR and doc examples"
-py.test --verbose --junitxml=$REPO_ROOT/python-results.xml --boxed $TST_DIR docs/source/examples/
+py.test --verbose --junitxml=$REPO_ROOT/python-results.xml -n $num_procs --boxed $TST_DIR docs/source/examples/
 # we run with pytest-xdist's --boxed flag so that the tests run independently
 # of each other (this prevents materialization conflicts and the segfault I
 # noticed with larger materializations)
