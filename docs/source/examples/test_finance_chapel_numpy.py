@@ -101,7 +101,10 @@ import testcase
 import os
 
 def test_example():
+    filename = os.sep.join([
+        os.path.dirname(os.path.realpath(__file__)), "aux", "GBPUSD1m.txt"
+    ])
     out = testcase.runpy(
-        os.path.realpath(__file__) +' --filename aux'+ os.sep +'GBPUSD1m.txt --no-viz'
+        os.path.realpath(__file__) + ' --filename %s --no-viz' % filename
     )
     assert out.endswith('171.26344695\n')

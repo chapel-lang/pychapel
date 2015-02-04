@@ -52,6 +52,8 @@ setup(
         ('share/pych/examples', glob.glob('../docs/source/examples/*.py')),
         ('share/pych/examples', glob.glob('../docs/source/examples/*.c')),
         ('share/pych/examples', glob.glob('../docs/source/examples/*.chpl')),
+        
+        ('share/pych/examples/aux', glob.glob('../docs/source/examples/aux/*.txt')),
 
         ('share/pych/sfiles/c',      glob.glob('../docs/source/examples/sfiles/c/*')),
         ('share/pych/sfiles/chapel', glob.glob('../docs/source/examples/sfiles/chapel/*')),
