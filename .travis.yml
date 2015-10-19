@@ -1,9 +1,16 @@
 language: python
-before_script:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq bc tcsh libgmp10 libgmp-dev
+
 script:
   # Run the python tests.
   - ./util/test_python.bash
   # Test that the docs actually build.
   - cd docs/ && make html
+
+addons:
+  apt:
+    packages:
+      - bc
+      - tcsh
+      - libgmp10
+      - libgmp-dev
+sudo: false
