@@ -10,7 +10,6 @@ proc bar() {
 }
 
 record whatev {
-  param num = 4;
   type t = real(32);
   var contents: t;
 }
