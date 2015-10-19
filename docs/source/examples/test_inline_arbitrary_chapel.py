@@ -16,8 +16,8 @@ def useArbitrary():
     // Should be: 14 14 3 14 14
     // 14 14 3 14 14
     writeln(baz());
-    // Should be: (num = 4, contents = 3.0)
-    // (num = 4, contents = 3.0)
+    // Should be: (contents = 3.0)
+    // (contents = 3.0)
     """
     return None
 
@@ -34,4 +34,4 @@ def test_using_other_chapel_code():
     the decorator argument "module_dirs"
     """
     out = testcase.runpy(os.path.realpath(__file__))
-    assert out.endswith('6\n14 14 3 14 14\n14 14 3 14 14\n(num = 4, contents = 3.0)\n(num = 4, contents = 3.0)\n')
+    assert out.endswith('6\n14 14 3 14 14\n14 14 3 14 14\n(contents = 3.0)\n(contents = 3.0)\n')
