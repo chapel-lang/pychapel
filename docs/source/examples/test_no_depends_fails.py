@@ -15,4 +15,4 @@ def test_using_multiple_modules():
     out = testcase.runpy(os.path.realpath(__file__))
     # Ensure that when a used module is nowhere near the exported function, we
     # get an error message to that effect.
-    assert "error: Cannot find module \'M1\'" in out
+    assert "error: Cannot find module or enum \'M1\'" in out
