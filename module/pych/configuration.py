@@ -31,7 +31,7 @@ class Configuration(object):
             config_path = []
             path = inspect.getmodule(self).__file__.split(os.sep)
             for directory in path:
-                if directory == "lib":
+                if directory == "lib" or directory == "local":
                     break
                 config_path.append(directory)
             config_path += [
