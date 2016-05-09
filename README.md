@@ -1,6 +1,6 @@
 # README #
 
-Documentation: https://pychapel.readthedocs.org
+Documentation: https://pychapel.readthedocs.io
 
 [![Build Status](https://travis-ci.org/chapel-lang/pychapel.svg?branch=master)](https://travis-ci.org/chapel-lang/pychapel)
 
@@ -11,7 +11,7 @@ Documentation: https://pychapel.readthedocs.org
 
 ### How do I get set up? ###
 
-Take a look at the installation-guide on https://pychapel.readthedocs.org
+Take a look at the installation-guide on https://pychapel.readthedocs.io
 
 ### Contribution guidelines ###
 
