@@ -1,6 +1,7 @@
 """
 Loads and stores pyChapel configuration.
 """
+from builtins import object
 # pylint: disable=maybe-no-member
 # The configuration object does have the "__file__" member via the module.
 # pylint: disable=too-few-public-methods

@@ -32,10 +32,10 @@ TYPEMAP = {
     None:       None,
     bool:       ctypes.c_bool,
     int:        ctypes.c_int,
-    long:       ctypes.c_long,
+    int:       ctypes.c_long,
     float:      ctypes.c_double,
     str:        ctypes.c_char_p,
-    unicode:    ctypes.c_wchar_p,
+    str:    ctypes.c_wchar_p,
     np.ndarray: ctypes.POINTER(PychArray)
 }
 
@@ -44,20 +44,20 @@ TYPE2SOURCE = {
         None:       "void",
         bool:       "bool",
         int:        "int",
-        long:       "long",
+        int:       "long",
         float:      "double",
         str:        "char*",
-        unicode:    "char*",
+        str:    "char*",
         np.ndarray: "pych_array*"
     },
     "chapel": {
         None:       "void",
         bool:       "bool",
         int:        "int",
-        long:       "int(64)",
+        int:       "int(64)",
         float:      "real(64)",
         str:        "string",
-        unicode:    "string",
+        str:    "string",
         np.ndarray: "pych_array"
     }
 }

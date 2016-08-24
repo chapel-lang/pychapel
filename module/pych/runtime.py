@@ -5,6 +5,7 @@
     orchestrate materialization of Externs and initialization
     of Externs/libraries.
 """
+from builtins import object
 import logging
 import ctypes
 

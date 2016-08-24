@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 from __future__ import print_function
+from __future__ import division
+from builtins import range
+from past.utils import old_div
 import argparse
 import numpy as np
 
@@ -7,8 +10,8 @@ def simulation(tsteps, spin, decay, velocity):
     """Simulation of some physical phenomenon on a dataset."""
 
     delta = velocity
-    for _ in xrange(0, tsteps):
-        delta = (spin * decay + velocity) / delta
+    for _ in range(0, tsteps):
+        delta = old_div((spin * decay + velocity), delta)
 
     return np.add.reduce(delta)
 

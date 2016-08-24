@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 from __future__ import print_function
+from __future__ import division
+from builtins import range
+from past.utils import old_div
 import argparse
 import time
 
@@ -61,11 +64,11 @@ def quant(date, bid, ask, voodoo):
 
     future = 200
     voodoo[:] = ask-bid
-    for i in xrange(0, future):
-        voodoo += (ask-bid + ask-bid  + ask-bid + ask-bid
+    for i in range(0, future):
+        voodoo += old_div((ask-bid + ask-bid  + ask-bid + ask-bid
                    +ask-bid + ask-bid + ask-bid + ask-bid
-                  ) / 8
-    voodoo[:] = voodoo / future
+                  ), 8)
+    voodoo[:] = old_div(voodoo, future)
 
 def main(filename, with_viz=True):
     date, bid, ask, voodoo = load_prices(filename)      # Load dataset

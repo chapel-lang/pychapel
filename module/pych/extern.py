@@ -14,6 +14,7 @@
     function is called. Or ahead-of-time, when the mapped function is
     decorated. Or somewhere in between those to points in time.
 """
+from builtins import object
 # pylint: disable=no-member
 # The ndarray member is added dynamically and therefore not visible to pylint.
 # pylint: disable=too-few-public-methods

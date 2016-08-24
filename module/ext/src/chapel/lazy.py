@@ -1,4 +1,5 @@
 from __future__ import print_function
+from builtins import object
 class Pen(object):
     def __init__(self):
         self._color = 0 # "private" variable
