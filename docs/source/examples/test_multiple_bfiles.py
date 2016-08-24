@@ -1,3 +1,4 @@
+from __future__ import print_function
 from pych.extern import Chapel
 
 @Chapel(bfile='file1.plain.chpl')

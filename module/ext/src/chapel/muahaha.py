@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 import ctypes
 
 def main():
@@ -8,7 +9,7 @@ def main():
     argv[0] = "chapel"
     chpl.chpl_library_init(0, argv)
 
-    print chpl.nicestuff(1000, 1000, 20)
+    print(chpl.nicestuff(1000, 1000, 20))
 
     chpl.chpl_library_finalize()
     return chpl
