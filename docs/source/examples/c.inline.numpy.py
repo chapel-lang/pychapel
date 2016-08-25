@@ -1,3 +1,4 @@
+from __future__ import print_function
 import numpy as np
 from pych.extern import FromC
 
@@ -26,5 +27,5 @@ def pass_it(x=np.ndarray, y=np.ndarray):
 
 if __name__ == "__main__":
     r = np.ones(10)
-    print pass_it(r, np.arange(0,10, dtype=np.float64))
-    print r
+    print(pass_it(r, np.arange(0,10, dtype=np.float64)))
+    print(r)

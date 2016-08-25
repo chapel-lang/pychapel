@@ -1,3 +1,5 @@
+from builtins import str
+from builtins import range
 from pych.extern import Chapel
 
 @Chapel()
@@ -20,5 +22,5 @@ import os.path
 
 def test_for():
     output = testcase.runpy(os.path.realpath(__file__));
-    for i in xrange(1, 1001):
+    for i in range(1, 1001):
         assert 'This is ' + str(i) + '\n' in output

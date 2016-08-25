@@ -1,6 +1,7 @@
 """
 Utility functions used across modules.
 """
+from __future__ import print_function
 import os
 
 def prepend_path(root, path):

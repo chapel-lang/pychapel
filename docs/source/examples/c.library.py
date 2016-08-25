@@ -1,3 +1,4 @@
+from __future__ import print_function
 from pych.extern import Extern
 
 #
@@ -25,6 +26,6 @@ def add_doubles(x=float, y=float):
     return float
 
 if __name__ == "__main__":
-    print hello_world()
-    print add_ints(1, 2)
-    print add_doubles(1.0, 2.0)
+    print(hello_world())
+    print(add_ints(1, 2))
+    print(add_doubles(1.0, 2.0))

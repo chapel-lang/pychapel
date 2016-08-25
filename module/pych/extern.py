@@ -14,6 +14,7 @@
     function is called. Or ahead-of-time, when the mapped function is
     decorated. Or somewhere in between those to points in time.
 """
+from builtins import object
 # pylint: disable=no-member
 # The ndarray member is added dynamically and therefore not visible to pylint.
 # pylint: disable=too-few-public-methods
@@ -149,7 +150,7 @@ class Extern(object):
         elif self.bfile:
             self.dec_fp = pych.RT.specializers[self.slang].abs_path(self.bfile)
         else:
-            self.dec_fp = self.pfunc.func_globals["__file__"]
+            self.dec_fp = self.pfunc.__globals__["__file__"]
 
         if self.dec_fp: # Construct hash of filepath to use as identifier
             # TODO: cache hashes and stats such stat/hash is per library and 

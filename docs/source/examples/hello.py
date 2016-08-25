@@ -1,3 +1,4 @@
+from __future__ import print_function
 import logging
 
 import pych
@@ -36,8 +37,8 @@ def add_doubles(x=float, y=float):
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
-    print hello_cworld()
-    print add_ints(1, 2)
-    print add_doubles(1.0, 2.0)
-    print add_doubles(1.0, 2.0)
-    print add_doubles(1.0, 2.0)
+    print(hello_cworld())
+    print(add_ints(1, 2))
+    print(add_doubles(1.0, 2.0))
+    print(add_doubles(1.0, 2.0))
+    print(add_doubles(1.0, 2.0))

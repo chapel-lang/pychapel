@@ -3,6 +3,9 @@
     specializing code-templates for Externs and possibly other
     things down the road.
 """
+from builtins import str
+from builtins import zip
+from builtins import object
 # pylint: disable=no-member
 # The ndarray member is added dynamically and therefore not visible to pylint.
 

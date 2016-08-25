@@ -1,6 +1,7 @@
 """
 Encapsulation for invoking system compiler.
 """
+from builtins import object
 # pylint: disable=too-few-public-methods
 # The Compiler object encapsulates compiler setup and it is only supposed
 # to take care of one well-define action: calling the compiler, it is

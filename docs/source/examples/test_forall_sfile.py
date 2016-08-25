@@ -1,3 +1,5 @@
+from builtins import str
+from builtins import range
 from pych.extern import Chapel
 
 @Chapel(sfile="forall.exported.chpl")
@@ -13,5 +15,5 @@ import os.path
 
 def test_forall():
     output = testcase.runpy(os.path.realpath(__file__))
-    for i in xrange(1, 10001):
+    for i in range(1, 10001):
         assert 'This is ' + str(i) + '\n' in output

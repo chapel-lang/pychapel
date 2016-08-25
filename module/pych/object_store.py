@@ -2,6 +2,7 @@
     Responsible for opening libraries, loading functions and maintaining
     handles to both.
 """
+from builtins import object
 from ctypes import cdll
 import ctypes
 import operator
