@@ -42,7 +42,12 @@ ifneq ($(OPEN_CMD),)
 endif
 
 test: deploy
-	py.test --boxed docs/source/examples
+	( export PATH=$(INSTALL_DIR)/bin:$(PATH); \
+	  export PYTHONPATH=$(INSTALL_DIR)/lib/python2.7/site-packages; \
+	  py.test --boxed module/testing docs/source/examples; \
+	  pych --testing; \
+	  rm -f `find . -type f -name "*.pyc"`; \
+	  rm -rf `find . -type d -name __pycache__` )
 
 clean:
 	rm -rf $(MODULE_DIR)/build
@@ -52,3 +57,5 @@ clean:
 	rm -f /tmp/tmp*.a
 	rm -f /tmp/temp-*.chpl
 	rm -f /tmp/temp-*.c
+	rm -f `find . -type f -name "*.pyc"`
+	rm -rf `find . -type d -name __pycache__`
