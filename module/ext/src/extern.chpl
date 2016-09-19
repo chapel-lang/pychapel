@@ -15,6 +15,7 @@ module Pythonic {
         var data:_ddata(real);
     }
 
+    pragma "modifies array blk"
     proc pych_to_chpl(arr: pych_array) {
 
         var dom = {0..1, 0..4};
