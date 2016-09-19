@@ -11,7 +11,7 @@ CHPL_GIT_URL=${CHPL_GIT_URL:-git://github.com/chapel-lang/chapel.git}
 CHPL_GIT_BRANCH=${CHPL_GIT_BRANCH:-master}
 
 log_info "Cloning Chapel source (branch: ${CHPL_GIT_BRANCH} repo: ${CHPL_GIT_URL}) into: ${CHPL_HOME}"
-git clone --branch $CHPL_GIT_BRANCH $CHPL_GIT_URL $CHPL_HOME
+git clone --branch $CHPL_GIT_BRANCH $CHPL_GIT_URL $CHPL_HOME --depth=50
 
 log_info "Moving to: ${CHPL_HOME}"
 cd $CHPL_HOME
