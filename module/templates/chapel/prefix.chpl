@@ -54,6 +54,7 @@ proc rangify(shape) where isTuple(shape) {
     }
 }
 
+pragma "modifies array blk"
 proc pych_to_chpl1D(arr: pych_array) {
     var dom = {0..(arr.shape(1):int(64)-1)};
 
@@ -98,6 +99,7 @@ proc pych_to_chpl1D(arr: pych_array) {
     return ret;
 }
 
+pragma "modifies array blk"
 proc pych_to_chpl2D(arr: pych_array) {
 
     var dom = {(...rangify(arr.shape))};

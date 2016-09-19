@@ -32,6 +32,7 @@ proc lolo(spin: _ddata(int(64))) {
     return spin;
 }
 
+pragma "modifies array blk"
 proc convert(ref foo : _ddata(int), d, stride: d.rank*int, block: d.rank*int) {
   var ret = new DefaultRectangularArr(eltType=foo.eltType, rank=d.rank,
       idxType=d.idxType,     // index type of domain
