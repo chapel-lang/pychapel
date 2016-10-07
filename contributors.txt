@@ -1,2 +1,5 @@
-Simon Andreas Frimann Lund
 Lydia Duncan
+Simon Andreas Frimann Lund (original developer)
+Elliot Ronaghan
+Thomas Van Doren
+Russel Winder
