@@ -67,7 +67,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u"%s" % APP_NAME
-copyright = u'2014, Simon A. F. Lund'
+copyright = u'2014-2016, Cray Inc.'
+author = 'Simon A. F. Lund'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
