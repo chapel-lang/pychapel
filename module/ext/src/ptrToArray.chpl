@@ -81,7 +81,7 @@ printDData();
 var ret = convert(ptr, {1..2, 1..5}, (1,1), (5,1));
 
 // the actual chapel array.
-var arr = new _array(ret, ret);
+var arr = _getArray(ret);
 writeln(arr);
 
 arr[1,1] = 11;

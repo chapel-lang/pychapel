@@ -72,7 +72,7 @@ module Pythonic {
         foo.data = _ddata_allocate(real, 10);
         
         var ret = pych_to_chpl(foo);
-        var arr = new _array(ret, ret);
+        var arr = _getArray(ret);
         arr = 4.0;
         arr += 1.0;
         writeln(arr);
