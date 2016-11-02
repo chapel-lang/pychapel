@@ -70,6 +70,8 @@ proc pych_to_chpl1D(arr: pych_array) {
         noinit_data = true              // Prevent overwriting your data
     );     
    
+    dom._value.add_arr(ret);
+
     for i in 1..arr.nd {
         // TODO: Is this conversion from bytes to elements correct?
         //ret.str(i) = (arr.strides(i):int(64) / (arr.itemsize));
@@ -116,6 +118,8 @@ proc pych_to_chpl2D(arr: pych_array) {
         dom = dom._value,               // The underlying class implementation
         noinit_data = true              // Prevent overwriting your data
     );     
+
+    dom._value.add_arr(ret);
 
     // rank*int tuples
 
