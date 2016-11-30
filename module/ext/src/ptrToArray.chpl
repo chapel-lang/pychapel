@@ -1,10 +1,6 @@
 config const n = 10;
 const drange = 0..n-1;
 
-// NOTE: Compile with -snoRefCount for this to work correctly.
-// The 'convert' function doesn't set up the array to be
-// reference counted correctly.
-
 var ptr : _ddata(int) = _ddata_allocate(int, n);
 
 proc printDData() {

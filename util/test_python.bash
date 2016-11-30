@@ -37,7 +37,7 @@ log_info "Running pych --check"
 pych --check
 
 # Copying pyChapel libchpl dependencies
-cp $CHPL_HOME/lib/linux64*/* $VIRTUAL_ENV/share/pych/lib/
+find $CHPL_HOME/lib/ -depth -type f -exec bash -c 'cp $0  $VIRTUAL_ENV/share/pych/lib/' {} \;
 
 log_info "Moving to: ${REPO_ROOT}"
 cd $REPO_ROOT

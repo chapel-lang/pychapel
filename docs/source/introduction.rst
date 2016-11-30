@@ -50,12 +50,12 @@ Reload your environment, then build the compiler::
 
 After building the two files: "libchpl.a" and "main.o" library should be available here::
 
-  ~/chapel/lib/linux64.gnu.arch-native.loc-flat.comm-none.tasks-fifo.tmr-generic.mem-cstdlib.atomics-intrinsics.gmp-none.hwloc-none.re-none.wide-struct.fs-none/
+  ~/chapel/lib/linux64/gnu/arch-native/loc-flat/comm-none/tasks-fifo/tmr-generic/mem-cstdlib/atomics-intrinsics/gmp-none/hwloc-none/re-none/wide-struct/fs-none/
 
 Copy these to the "lib" library of pyChapel. Using a default install this can be
 done with the command::
 
-  cp ~/chapel/lib/linux64*/* /usr/local/share/pych/lib/
+  find ~/chapel/lib/ -depth -type f -exec bash -c 'cp $0 /usr/local/share/pych/lib/' {} \;
 
 After going through these steps the installation can be verified by running the
 "pych" command::
