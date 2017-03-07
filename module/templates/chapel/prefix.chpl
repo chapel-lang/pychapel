@@ -74,7 +74,8 @@ proc pych_to_chpl1D(arr: pych_array) {
     for i in 1..arr.nd {
         // TODO: Is this conversion from bytes to elements correct?
         //ret.str(i) = (arr.strides(i):int(64) / (arr.itemsize));
-        ret.str(i) = 1;
+        ret.str(i) = arr.strides(i):int(64);
+        //ret.str(i) = 1;
     }
     //writeln("Strides");
     //for str in ret.str {
@@ -83,9 +84,9 @@ proc pych_to_chpl1D(arr: pych_array) {
     for i in 1..arr.nd {
         // TODO: Is this conversion from bytes to elements correct?
         // The block seems to be what NumPy call strides.
-        ret.blk(i) = (arr.strides(i):int(64) / arr.itemsize);
+        //ret.blk(i) = (arr.strides(i):int(64) / arr.itemsize);
     }
-    //ret.blk = block;
+    ret.blk = block;
 
     // get offsets from domain
     for param i in 1..dom.rank {
