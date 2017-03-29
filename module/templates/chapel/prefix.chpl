@@ -55,6 +55,7 @@ proc rangify(shape) where isTuple(shape) {
 }
 
 proc pych_to_chpl1D(arr: pych_array) {
+    pragma "no auto destroy"
     var dom = {0..(arr.shape(1):int(64)-1)};
 
     var stride = (1,);
@@ -83,7 +84,10 @@ proc pych_to_chpl1D(arr: pych_array) {
     for i in 1..arr.nd {
         // TODO: Is this conversion from bytes to elements correct?
         // The block seems to be what NumPy call strides.
-        ret.blk(i) = (arr.strides(i):int(64) / arr.itemsize);
+      if (arr.strides(i):int(64) != arr.itemsize) {
+        writeln("warning: pyChapel may not support unusually strided ndarrays");
+      }
+      ret.blk(i) = (arr.strides(i):int(64) / arr.itemsize);
     }
     //ret.blk = block;
 
@@ -101,7 +105,7 @@ proc pych_to_chpl1D(arr: pych_array) {
 }
 
 proc pych_to_chpl2D(arr: pych_array) {
-
+    pragma "no auto destroy"
     var dom = {(...rangify(arr.shape))};
 
     //writeln(pych_to_chplT(arr));

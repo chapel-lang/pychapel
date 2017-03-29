@@ -16,7 +16,7 @@ module Pythonic {
     }
 
     proc pych_to_chpl(arr: pych_array) {
-
+        pragma "no auto destroy"
         var dom = {0..1, 0..4};
         var stride = (1, 1);
         var block = (5, 1);
@@ -29,6 +29,7 @@ module Pythonic {
             dom = dom._value,               // The underlying class implementation
             noinit_data = true              // Prevent overwriting your data
         );     
+        dom._value.add_arr(ret);
 
         // rank*int tuples
 
