@@ -84,10 +84,10 @@ proc pych_to_chpl1D(arr: pych_array) {
     for i in 1..arr.nd {
         // TODO: Is this conversion from bytes to elements correct?
         // The block seems to be what NumPy call strides.
-      if (arr.strides(i):int(64) != arr.itemsize) then
-        halt("pyChapel does not support sparsely packed ndarrays");
-      ret.blk(i) = 1;
-        //ret.blk(i) = (arr.strides(i):int(64) / arr.itemsize);
+      if (arr.strides(i):int(64) != arr.itemsize) {
+        writeln("warning: pyChapel may not support unusually strided ndarrays");
+      }
+      ret.blk(i) = (arr.strides(i):int(64) / arr.itemsize);
     }
     //ret.blk = block;
 

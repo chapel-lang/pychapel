@@ -110,4 +110,4 @@ def test_example():
     )
     # Verifies that we get the expected error message when we are passed a
     # numpy array that is not densely packed
-    assert out.endswith('error: halt reached - pyChapel does not support sparsely packed ndarrays\n')
+    assert 'warning: pyChapel may not support unusually strided ndarrays\n' in out
