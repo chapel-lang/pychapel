@@ -10,8 +10,6 @@ import matplotlib.ticker as mticker
 import matplotlib.dates as mdates
 import numpy as np
 
-import pytest
-
 from pych.extern import Chapel
 
 elapsed = [time.time()]
@@ -56,6 +54,9 @@ def load_prices(filename):
         unpack=True,
         delimiter=',',
     )
+    date = date.flatten()
+    bid = bid.flatten()
+    ask = ask.flatten()
     voodoo = np.empty(date.shape)
 
     return date, bid, ask, voodoo
@@ -103,7 +104,6 @@ import testcase
 # contains the general testing method, which allows us to gather output
 import os
 
-@pytest.mark.xfail
 def test_example():
     filename = os.sep.join([
         os.path.dirname(os.path.realpath(__file__)), "aux", "GBPUSD1m.txt"
