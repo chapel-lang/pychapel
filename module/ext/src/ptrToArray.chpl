@@ -35,6 +35,7 @@ proc convert(ref foo : _ddata(int), d, stride: d.rank*int, block: d.rank*int) {
       dom=d._value,          // d._value is the underlying class implementation
       noinit_data=true);     // prevent overwriting your data
 
+  d._value.add_arr(ret);
   // rank*int tuples
 
   // stride for each dimension
