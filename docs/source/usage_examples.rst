@@ -49,10 +49,16 @@ and adding the include statement:
    :language: python
    :lines: 15-15
 
+.. note:: Chapel's array implementation currently requires that sparsely
+          packed numpy arrays be *flattened* before sending them to any
+          Chapel function (see issue `67 <https://github.com/chapel-lang/pychapel/issues/67>`_).
+          This can be done by calling ``.flatten()`` on any sparsely
+          packed numpy array.
+
 These two implementations can be executed by the commands::
 
   ./test_finance_python_numpy.py --filename=aux/GBPUSD1m.txt
-  ./test_finance_chapel_numpy.py --filename=aux/GBPUSD1m.txt
+  ./test_finance_chapel_numpy_flatten.py --filename=aux/GBPUSD1m.txt
 
 Numbers
 .......
