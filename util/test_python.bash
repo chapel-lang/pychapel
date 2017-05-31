@@ -23,7 +23,7 @@ source util/quickstart/setchplenv.bash && \
 
 # Install python dependencies for running the tests (not building the docs).
 log_info "Installing python test dependencies."
-pip install -r $TST_DIR/requirements.txt
+pip install -r $TST_DIR/requirements.txt --upgrade
 
 (
     log_info "Moving to: ${MODULE_DIR}"
