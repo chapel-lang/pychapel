@@ -70,7 +70,7 @@ following content:
 
 .. literalinclude:: /examples/test_chapel_inline.py
    :language: python
-   :lines: 1-12
+   :lines: 1-11
 
 Then try running it::
 

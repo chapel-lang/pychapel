@@ -27,7 +27,7 @@ conventions.
 
 .. literalinclude:: /examples/test_chapel_inline.py
    :language: python
-   :lines: 1-12
+   :lines: 1-11
 
 The Chapel code goes into the ``docstring`` of the decorated function.
 
@@ -52,7 +52,7 @@ function-body is taken from the given file.
 
 .. literalinclude:: /examples/test_bfile.py
    :language: python
-   :lines: 1-9
+   :lines: 1-8
 
 The ``bfile`` target could contain something like below.
 
@@ -94,7 +94,7 @@ with a function body.  For example,
 
 .. literalinclude:: /examples/test_chapel_sfile2.py
    :language: python
-   :lines: 1-9
+   :lines: 1-8
 
 Where ``sfile.hello.chpl`` contains:
 
@@ -130,7 +130,7 @@ function:
 
 .. literalinclude:: /examples/test_sfile_hellolib.py
    :language: python
-   :lines: 1-9
+   :lines: 1-8
 
 Let's say that you insist on calling your ``@Chapel`` decorated Python function
 ``hello_world`` and you refuse to rename, nor export the Chapel procedure under
@@ -138,7 +138,7 @@ a different name, then you can map the Python function using ``ename``:
 
 .. literalinclude:: /examples/test_sfile_ename.py
    :language: python
-   :lines: 1-9
+   :lines: 1-8
 
 Real-world cases usually involve motivation other than stubborn unwillingness to
 refactor code. Regardless of the motivation, the ``ename`` decorator argument
