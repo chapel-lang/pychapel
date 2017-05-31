@@ -29,8 +29,8 @@ An example of such an application is provided below:
    :lines: 1-92
 
 Where the computationally intensive part is the function
-``quant``. Do note that the specific implementatio of the ``quant`` function
-does not compute anytime meaningful.
+``quant``. Do note that the specific implementation of the ``quant`` function
+does not compute anything meaningful.
 Using ``pych`` this function can be mapped to Chapel by changing:
 
 .. literalinclude:: /examples/test_finance_python_numpy.py

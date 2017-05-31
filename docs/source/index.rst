@@ -13,7 +13,7 @@ pyChapel provides interoperability with Chapel in three forms:
 2. Chapel code from source-files
 3. Compile Chapel modules into Python modules
 
-The docs can be read from beginning to end or ff you want a bit of motivation and
+The docs can be read from beginning to end or if you want a bit of motivation and
 see what you might gain by familiarizing yourself with ``pyChapel`` then take a look at :ref:`sec-usage-examples` and :ref:`sec-usage` first.
 
 Contents:

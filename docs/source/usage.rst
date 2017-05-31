@@ -18,7 +18,7 @@ Inlined
 ~~~~~~~
 
 If you read :ref:`sec-getting-started` you might be disappointed since you were
-promised something more exiting than ``Hello, world``. Don't worry we will get
+promised something more exciting than ``Hello, world``. Don't worry we will get
 there after we've gone through the basics.
 
 When using `inlined` mode you get access to Chapel by decorating functions with
@@ -59,7 +59,7 @@ The ``bfile`` target could contain something like below.
 .. literalinclude:: /examples/bfiles/chapel/bfile.hello.chpl
    :language: chapel
 
-It is not of consequence, but it is still worth noting that the Chapel source targeted with ``bfile`` most commonly will not be a valid Chapel program.  The example above is insidently valid, so to illustrate an example is provided
+It is not of consequence, but it is still worth noting that the Chapel source targeted with ``bfile`` most commonly will not be a valid Chapel program.  The example above is incidently valid, so to illustrate an example is provided
 below where the ``bfile`` target is not a valid Chapel program.
 
 Is this example the ``fibonacci`` function is decorated:
@@ -184,7 +184,7 @@ Which is: See them as as foreign function-declarations instead of Python functio
 
 That worked right? Yeah, I know it did.
 
-It is a unconventional use of Python function but it serves as a much less verbose way to declare foreign functions in comparison to other ffi-libraries in Python.
+It is an unconventional use of Python function but it serves as a much less verbose way to declare foreign functions in comparison to other ffi-libraries in Python.
 
 .. _subsec-compiling-modules:
 
