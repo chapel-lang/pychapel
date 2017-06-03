@@ -66,6 +66,7 @@ if __name__ == "__main__":                  # Argument parsing
     args = parser.parse_args()
 
     main(args.tsteps, args.particles)
+    # End of program marker for usage_examples.rst
 
 import testcase
 # contains the general testing method, which allows us to gather output

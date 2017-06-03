@@ -26,7 +26,7 @@ An example of such an application is provided below:
 .. literalinclude:: /examples/test_finance_python_numpy.py
    :language: python
    :linenos:
-   :lines: 1-96
+   :end-before: End of program marker
 
 Where the computationally intensive part is the function
 ``quant``. Do note that the specific implementation of the ``quant`` function
@@ -35,19 +35,21 @@ Using ``pych`` this function can be mapped to Chapel by changing:
 
 .. literalinclude:: /examples/test_finance_python_numpy.py
    :language: python
-   :lines: 62-71
+   :pyobject: quant
 
 to:
 
 .. literalinclude:: /examples/test_finance_chapel_numpy.py
    :language: python
-   :lines: 63-75
+   :start-after: begin pyChapel quant
+   :end-before: end pyChapel quant
 
 and adding the include statement:
 
 .. literalinclude:: /examples/test_finance_chapel_numpy.py
    :language: python
-   :lines: 15-15
+   :start-after: begin marker for import
+   :end-before: end marker for import
 
 .. note:: Chapel's array implementation currently requires that sparsely
           packed numpy arrays be *flattened* before sending them to any
@@ -93,7 +95,7 @@ An example of such an application is provided below:
 .. literalinclude:: /examples/test_python_synthetic_numpy.py
    :language: python
    :linenos:
-   :lines: 1-50
+   :end-before: End of program marker
 
 where the time-consuming, computational expensive, and memory hungry portion of
 the application is the data-processing performed in the `simulation` function.
@@ -107,7 +109,7 @@ such as the example below illustrates:
 .. literalinclude:: /examples/test_chapel_synthetic_numpy.py
    :language: python
    :linenos:
-   :lines: 1-50
+   :end-before: End of program marker
 
 These two implementations can be executed by the commands::
 
@@ -136,5 +138,5 @@ C-Implementation
 .. literalinclude:: /examples/test_c_synthetic_numpy.py
    :language: python
    :linenos:
-   :lines: 1-68
+   :end-before: End of program marker
 

@@ -11,5 +11,5 @@ Bla bla use pyChapel to dynamically compile c-code.
 
 .. literalinclude:: /examples/test_c_inline.py
    :language: python
-   :lines: 1-20
+   :end-before: End of program marker
 

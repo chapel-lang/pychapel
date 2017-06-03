@@ -12,7 +12,9 @@ import numpy as np
 
 import pytest
 
+# begin marker for import line for usage_examples.rst
 from pych.extern import Chapel
+# end marker for import line for usage_examples.rst
 
 elapsed = [time.time()]
 
@@ -60,6 +62,7 @@ def load_prices(filename):
 
     return date, bid, ask, voodoo
 
+# begin pyChapel quant marker for usage_examples.rst
 @Chapel()
 def quant(date=np.ndarray, bid=np.ndarray, ask=np.ndarray, voodoo=np.ndarray):
     """
@@ -73,6 +76,7 @@ def quant(date=np.ndarray, bid=np.ndarray, ask=np.ndarray, voodoo=np.ndarray):
     voodoo = voodoo / future;
     """
     return None
+# end pyChapel quant marker for usage_examples.rst
 
 def main(filename, with_viz=True):
     date, bid, ask, voodoo = load_prices(filename)      # Load dataset
