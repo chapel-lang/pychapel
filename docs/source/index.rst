@@ -24,7 +24,6 @@ Contents:
    introduction.rst
    usage.rst
    usage_examples.rst
-   usage_other.rst
    configuration.rst
    pych/index.rst
 
