@@ -86,8 +86,7 @@
             ],
             "lflags": [
                 "-shared",
-                "-lpthread",
-                "-lgmp"
+                "-lpthread"
             ],
 
             "ctargets": [
