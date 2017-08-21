@@ -23,6 +23,12 @@ source util/quickstart/setchplenv.bash && \
 
 # Install python dependencies for running the tests (not building the docs).
 log_info "Installing python test dependencies."
+
+# 2017-08-21:   This "pip install setuptools_scm" avoids some kind of bug in pip
+#     See reference: https://github.com/pypa/pypi-legacy/issues/322
+#   search for text: I did pip install setuptools_scm and it solved the problem.
+pip install setuptools_scm
+
 pip install -r $TST_DIR/requirements.txt --upgrade
 
 (
