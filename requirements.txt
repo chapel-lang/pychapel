@@ -4,7 +4,7 @@ Pygments
 Sphinx
 sphinx_rtd_theme
 sphinxcontrib-bibtex
-numpy
+numpy>=1.14
 matplotlib
 
 future>=0.15.2
