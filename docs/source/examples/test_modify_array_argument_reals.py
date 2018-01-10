@@ -28,4 +28,4 @@ def test_modify_array_argument_reals():
     # expected output follows it (enabling the test to work for all runs, as
     # the temporary file message won't occur in the second run) But that means
     # we can't use ==
-    assert out.endswith("[  2.   3.   4.   5.   6.   7.   8.   9.  10.  11.]\n");
+    assert out.endswith("[ 2.  3.  4.  5.  6.  7.  8.  9. 10. 11.]\n");
