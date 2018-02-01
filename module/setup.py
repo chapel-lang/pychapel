@@ -39,10 +39,13 @@ class post_install(install_data):
 setup(
     name        = APP_NAME,
     version     = APP_VERSION,
-    description = 'pyChapel, Python ~ Chapel integration.',
-    url         = 'http://www.bh107.org',
+    description = 'pyChapel: The Python/Chapel integration module',
+    url         = 'http://pychapel.readthedocs.io/',
     author      = 'Simon A. F. Lund',
     author_email='safl@safl.dk',
+    maintainer  = 'Chapel Developers',
+    maintainer_email = 'chapel_info@cray.com',
+    license     = 'Apache 2.0',
     data_files  = [
         ('share/pych/config', ['configs/pych.json']),
         
