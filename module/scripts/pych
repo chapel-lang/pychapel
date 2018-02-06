@@ -60,9 +60,19 @@ def check(arg):
 
     # Check that Chapel libraries are there
     info(" * Libraries")
+    dir = os.sep.join([
+        CONFIG["compilers"]["chapel"]["root_path"],
+        CONFIG["compilers"]["chapel"]["lib_path"],
+    ])
+    if not os.path.exists(dir):
+        error( "Missing lib dir at (%s)" % (dir) )
+    else:
+        for file in ["libchpl.a", "main.o",]:   # FIXME: hard-coded in config/pych.json
+            if not os.path.exists(os.sep.join([dir, file,])):
+                error( "Missing Chapel lib file(%s) in dir(%s)" % (file, dir))
 
     # Check that c-headers are there
-    info(" * Headers")
+    # info(" * Headers")    # FIXME: should check for header files here
 
     # Check that the commands are invokable
     info(" * Commands")
@@ -141,7 +151,7 @@ def testing(arg):
     for path in CONFIG._config["testing"]["paths"]:
         info("Running tests in %s" % path)
         process = subprocess.Popen(
-            ["py.test", path]
+            ["py.test", "-v", path]
         )
         out, err = process.communicate()
         retvals.append(process.returncode)
