@@ -47,7 +47,7 @@ Run the pyChapel self-check. Note the "Missing Chapel lib" dir location::
 PyChapel requires the Chapel compiler and runtime, which must be built from source
 to work with pyChapel. 
 
-Get Chapel source from Github::
+Get the Chapel source from Github::
 
   $ cd $HOME    # For example- any location that will not get accidentally deleted
   $ git clone git@github.com:chapel-lang/chapel.git
@@ -81,7 +81,7 @@ Build the Chapel compiler and run-time system::
   $ make
 
 See `Quickstart <https://chapel-lang.org/docs/latest/usingchapel/QUICKSTART.html>`_ for more
-about building Chapel.
+information about building Chapel.
 
 
 Chapel run-time libraries
@@ -90,8 +90,8 @@ Chapel run-time libraries
 The Chapel build leaves the run-time libraries in a platform-dependent internal subdirectory.
 Fortunately, a utility is provided that returns the location.
 The library files must be copied into pyChapel's "Chapel lib" internal subdirectory: the
-"Missing Chapel lib" dir location reported by ``pych -k``.  For example,
-``$HOME/.local/share/pych/lib``).
+"Missing Chapel lib" dir location reported by ``pych -k``
+(for example, ``$HOME/.local/share/pych/lib``).
 
 Copy the run-time libraries from Chapel into pyChapel::
 
