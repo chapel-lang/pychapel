@@ -42,8 +42,14 @@ pip install -r $TST_DIR/requirements.txt --upgrade
 log_info "Running pych --check"
 pych --check
 
-# Copying pyChapel libchpl dependencies
-find $CHPL_HOME/lib/ -depth -type f -exec bash -c 'cp $0  $VIRTUAL_ENV/share/pych/lib/' {} \;
+log_info "Copying pyChapel libchpl dependencies"
+if libchpl=$( $CHPL_HOME/util/config/compileline --main.o ); then
+    cp $( dirname $libchpl )/* $VIRTUAL_ENV/share/pych/lib/
+    ls -ld $VIRTUAL_ENV/share/pych/lib/*
+else
+    log_error "Failed util/config/compileline --main.o"
+    exit 2
+fi
 
 log_info "Moving to: ${REPO_ROOT}"
 cd $REPO_ROOT

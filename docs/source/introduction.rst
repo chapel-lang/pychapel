@@ -1,3 +1,4 @@
+
 .. _sec-getting-started:
 
 Getting Started
@@ -7,60 +8,116 @@ This section covers installation of pyChapel and required software packages,
 introduces the "pych" utility and provides a "hello world" example of using
 pyChapel.
 
+System Requirements
+~~~~~~~~~~~~~~~~~~~
+
+* Linux-64 host system (Ubuntu 16.04 is shown here). Mac OS-X is not yet supported.
+* Python-2.7 (the later, the better), with pip. Python-3 is not yet supported.
+* Support for Chapel "Quickstart" on the host. See `Prerequisites <https://chapel-lang.org/docs/latest/usingchapel/prereqs.html>`_
+
 Installation
 ~~~~~~~~~~~~
 
-The steps for installing pyChapel and the software packages it depends upon is
-fairly straightforward. The following provides a setup guide on a Ubuntu-linux system.
+The steps for installing pyChapel and the software packages it depends upon are
+fairly straightforward. The following provides a setup guide on a Ubuntu-16.04
+host system.
 
-Depending on your system the commands might be slightly different but the 
-should provide the gist of what is required.
+The pyChapel Python module itself is available from PyPi.
+Make sure you are using the Python2 version of Pip and any other Python utilities.
+We recommend using Pip's "user install" option as shown here, but those familiar
+with other Python2 virtual environments may adapt these instructions accordingly.
+A Pip "user install" will install pyChapel under ``$HOME/.local``, so make sure that
+``$HOME/.local/bin`` is near the front of your PATH.
 
-pyChapel depends on the pyChapel Python module itself which is available via
-PyPi. Additionally the Chapel compiler and a library compiled with the compiler
-is required.
+If Pip is not already installed on your system, but easy_install is, you can probably
+"user install" your own copy of Pip::
 
-Installing pyChapel::
+    easy_install --prefix $HOME/.local pip
 
-  pip install numpy argparse pyChapel
+Install pyChapel and dependencies from PyPi::
 
-Build and install Chapel from source::
+    pip install --user "numpy>=1.14" "future>=0.15.2"
+    pip install --user --upgrade --no-binary pyChapel pyChapel
 
-  cd ~
-  git clone git@github.com:chapel-lang/chapel.git
+Run the pyChapel self-check::
 
-Add this or equivalent to your environment::
+    pych -k     # if "command not found", make sure $HOME/.local/bin is in PATH
 
-  #
-  # Setup Chapel
-  #
-  CWD=`pwd`
-  export CHPL_REGEXP=none
-  export CHPL_MEM=cstdlib
-  export CHPL_GMP=none
-  export CHPL_TASKS=fifo
-  export CHPL_LIBMODE=shared
-  cd ~/chapel/ && source ~/chapel/util/setchplenv.bash
-  cd $CWD
+Note the `Missing Chapel lib` dir location in the output::
 
-Reload your environment, then build the compiler::
+    Checking installation...
+    * Templates
+    * Object Storage
+    * Libraries
+    ERR: Missing Chapel lib file(libchpl.a) in dir(/home/chapeluser/.local/share/pych/lib)
+    ERR: Missing Chapel lib file(main.o) in dir(/home/chapeluser/.local/share/pych/lib)
+    * Commands
 
-  cd ~/chapel
-  make
+PyChapel requires the Chapel compiler and runtime, which must be built from source
+to work with pyChapel. 
 
-After building the two files: "libchpl.a" and "main.o" library should be available here::
+Get the Chapel source from Github::
 
-  ~/chapel/lib/linux64/gnu/arch-native/loc-flat/comm-none/tasks-fifo/tmr-generic/mem-cstdlib/atomics-intrinsics/gmp-none/hwloc-none/re-none/wide-struct/fs-none/
+    cd $HOME    # For example- any location that will not get accidentally deleted
+    git clone git@github.com:chapel-lang/chapel.git
 
-Copy these to the "lib" library of pyChapel. Using a default install this can be
-done with the command::
+Note the location::
 
-  find ~/chapel/lib/ -depth -type f -exec bash -c 'cp $0 /usr/local/share/pych/lib/' {} \;
+    $HOME/chapel    # in this example
 
-After going through these steps the installation can be verified by running the
-"pych" command::
+Add the following to your shell environment (`.bashrc`, for example)::
 
-  pych --check
+    #
+    # Setup Chapel environment
+    #
+    # CHPL_HOME=Chapel source location
+    #
+    export CHPL_HOME=$HOME/chapel   # in this example
+    export CHPL_LIBMODE=shared
+    source $CHPL_HOME/util/quickstart/setchplenv.bash
+    #
+    # Add Pip/Python "user install" bin to PATH, if needed
+    #
+    export PATH=$HOME/.local/bin:$PATH
+
+Build the Chapel compiler and run-time system::
+
+    # Make sure the above shell environment has been set up first
+
+    cd $CHPL_HOME
+    make
+
+See `Quickstart <https://chapel-lang.org/docs/latest/usingchapel/QUICKSTART.html>`_ for more
+information about building Chapel.
+
+
+Chapel run-time libraries
+-------------------------
+
+The Chapel build leaves the run-time libraries in a platform-dependent internal subdirectory.
+Fortunately, a utility is provided that returns the location.
+The library files must be copied into pyChapel's internal "lib" subdirectory: the
+`Missing Chapel lib` dir location reported by ``pych -k``
+(for example, ``$HOME/.local/share/pych/lib``).
+
+Copy the run-time libraries from Chapel into pyChapel::
+
+    libchpl=`$CHPL_HOME/util/config/compileline --main.o`
+    libpych=$HOME/.local/share/pych/lib     # from "pych -k"
+    cp `dirname $libchpl`/* $libpych
+
+Re-run the pyChapel self-check::
+
+    pych -k
+
+Note: no `Missing Chapel lib files` in the output::
+
+    Checking installation...
+    * Templates
+    * Object Storage
+    * Libraries
+    * Commands
+
 
 Hello World
 ~~~~~~~~~~~
@@ -74,7 +131,7 @@ following content:
 
 Then try running it::
 
-  python hw.py
+    python hw.py
 
 This should then print out the classic::
 

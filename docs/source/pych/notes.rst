@@ -1,5 +1,5 @@
-Miscelanous Notes
-=================
+Miscellaneous Notes
+===================
 
 Developer Notes
 ~~~~~~~~~~~~~~~
