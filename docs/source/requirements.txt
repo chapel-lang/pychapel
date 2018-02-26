@@ -1,0 +1,3 @@
+# For pychapel.readthedocs.io.
+-r ../../requirements.txt
+../../module
