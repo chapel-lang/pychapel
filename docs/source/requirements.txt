@@ -1,3 +1,17 @@
-# For pychapel.readthedocs.io.
--r ../../requirements.txt
-../../module
+# For pychapel.readthedocs.io's auto-build.
+# Copy toplevel requirements.txt file and add a "requirement" to install pychapel from this source.
+# The path to "module" works if pip install -r <this file> is run from the toplevel directory- but
+# not if that command is run from here.
+
+python<3.0
+pybtex
+Pygments
+Sphinx
+sphinx_rtd_theme
+sphinxcontrib-bibtex
+numpy>=1.14
+matplotlib
+
+future>=0.15.2
+
+./module
