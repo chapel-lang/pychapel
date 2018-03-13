@@ -18,6 +18,7 @@ def add_ints(x=int, y=int):
 if __name__ == "__main__":
     print(add_doubles(1.0, 3.0))
     print(add_ints(1,2))
+    # End of program marker for usage_other.rst
 
 def test_c_inline():
     assert add_doubles(1.0, 3.0) == 4.0
