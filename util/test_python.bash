@@ -27,9 +27,9 @@ log_info "Installing python test dependencies."
 # 2017-08-21:   This "pip install setuptools_scm" avoids some kind of bug in pip
 #     See reference: https://github.com/pypa/pypi-legacy/issues/322
 #   search for text: I did pip install setuptools_scm and it solved the problem.
-pip install setuptools_scm
+pip install $CHPL_PIP_INSTALL_PARAMS setuptools_scm
 
-pip install -r $TST_DIR/requirements.txt --upgrade
+pip install $CHPL_PIP_INSTALL_PARAMS -r $TST_DIR/requirements.txt --upgrade
 
 (
     log_info "Moving to: ${MODULE_DIR}"
