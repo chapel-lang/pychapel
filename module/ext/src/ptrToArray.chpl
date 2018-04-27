@@ -29,7 +29,7 @@ proc lolo(spin: _ddata(int(64))) {
 }
 
 proc convert(ref foo : _ddata(int), d, stride: d.rank*int, block: d.rank*int) {
-  var ret = new DefaultRectangularArr(eltType=foo.eltType, rank=d.rank,
+  var ret = new unmanaged DefaultRectangularArr(eltType=foo.eltType, rank=d.rank,
       idxType=d.idxType,     // index type of domain
       stridable=d.stridable, // boolean, can we stride?
       dom=d._value,          // d._value is the underlying class implementation
