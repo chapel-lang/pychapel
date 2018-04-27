@@ -61,7 +61,7 @@ proc pych_to_chpl1D(arr: pych_array) {
     var stride = (1,);
     var block = (1,);
 
-    var ret = new DefaultRectangularArr(
+    var ret = new unmanaged DefaultRectangularArr(
         eltType = real,                 // Element type
         rank = dom.rank,                // Rank
         idxType = dom.idxType,          // Index type of domain
@@ -112,7 +112,7 @@ proc pych_to_chpl2D(arr: pych_array) {
     var stride = (1, 1);
     var block = (3, 1);
 
-    var ret = new DefaultRectangularArr(
+    var ret = new unmanaged DefaultRectangularArr(
         eltType = real,                 // Element type
         rank = dom.rank,                // Rank
         idxType = dom.idxType,          // Index type of domain
