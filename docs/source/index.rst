@@ -7,14 +7,9 @@
 pych - The Python/Chapel integration module
 ===========================================
 
-pyChapel provides interoperability with Chapel in three forms:
+**NOTE: This repository is now deprecated.  Stay tuned for a new solution!**
 
-1. Chapel code inlined in Python
-2. Chapel code from source-files
-3. Compile Chapel modules into Python modules
 
-The docs can be read from beginning to end or if you want a bit of motivation and
-see what you might gain by familiarizing yourself with ``pyChapel`` then take a look at :ref:`sec-usage-examples` and :ref:`sec-usage` first.
 
 Contents:
 
