@@ -1,6 +1,6 @@
 # README #
 
-***NOTE: This repository is now deprecated.  Stay tuned for a new solution***
+**NOTE: This repository is now deprecated.  Stay tuned for a new solution**
 
 Documentation: https://pychapel.readthedocs.io
 
