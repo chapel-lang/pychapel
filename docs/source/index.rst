@@ -7,7 +7,11 @@
 pych - The Python/Chapel integration module
 ===========================================
 
-**NOTE: This repository is now deprecated.  Stay tuned for a new solution!**
+**NOTE: This repository is now deprecated**
+
+Please visit `the Chapel interoperability documentation
+<https://chapel-lang.org/docs/technotes/libraries.html#using-your-library-in-python>`_
+for the new Python-Chapel interoperability strategy!
 
 
 
@@ -20,7 +24,6 @@ Contents:
    usage.rst
    usage_examples.rst
    configuration.rst
-   pych/index.rst
 
 Indices and tables
 ==================
